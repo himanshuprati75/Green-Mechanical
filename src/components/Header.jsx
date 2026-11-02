@@ -64,26 +64,25 @@ export default function Header({ onOpenCallModal, onOpenQuoteModal }) {
 
         {/* CTA Buttons */}
         <div className="flex items-center gap-3">
-          {/* Dispatch Phone Button (Desktop opens modal, mobile taps tel) */}
-          <div className="hidden sm:flex flex-col items-end text-right">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-forest-700 flex items-center gap-1">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-              Fast Local Response
-            </span>
-            <a 
-              href="tel:9208580241"
-              onClick={(e) => {
-                if (window.innerWidth >= 1024) {
-                  e.preventDefault();
-                  onOpenCallModal();
-                }
-              }}
-              className="text-lg font-black text-navy-950 hover:text-forest-600 transition-colors tracking-tight flex items-center gap-1.5"
-            >
-              <Phone className="w-4 h-4 text-sunburst-600" />
-              (920) 858-0241
-            </a>
-          </div>
+          {/* Dispatch Phone Button (Direct Instant Call) */}
+          <a
+            href="tel:9208580241"
+            className="hidden sm:flex items-center gap-2.5 px-3 py-1.5 rounded-xl hover:bg-slate-100 transition-all group"
+            title="Call (920) 858-0241 immediately"
+          >
+            <div className="w-8 h-8 rounded-full bg-emerald-100 group-hover:bg-forest-600 flex items-center justify-center transition-colors shadow-sm">
+              <Phone className="w-4 h-4 text-forest-700 group-hover:text-white transition-colors" />
+            </div>
+            <div className="flex flex-col items-start text-left">
+              <span className="text-[10px] uppercase font-bold tracking-wider text-forest-700 flex items-center gap-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span>
+                Book a Call Now
+              </span>
+              <span className="text-sm md:text-base font-extrabold text-navy-950 group-hover:text-forest-600 transition-colors whitespace-nowrap">
+                (920) 858-0241
+              </span>
+            </div>
+          </a>
 
           <a
             href="tel:9208580241"
